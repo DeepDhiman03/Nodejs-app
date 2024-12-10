@@ -72,12 +72,7 @@ You need to store your AWS and Docker credentials in Jenkins using the **Credent
 To receive email notifications about the success or failure of your pipeline, configure the Jenkins SMTP server:
 
 1. Go to **Manage Jenkins > Configure System**.
-2. In the **E-mail Notification** section, configure the SMTP server settings:
-   - **SMTP server**: `<your-smtp-server>` (For example, use Gmail SMTP: `smtp.gmail.com`).
-   - **Default user e-mail suffix**: `@example.com`.
-   - **SMTP username**: `<your-email>`.
-   - **SMTP password**: `<your-email-password>`.
-   - **SMTP port**: `465` for SSL or `587` for TLS.
+2. In the **E-mail Notification** section, configure the SMTP server settings
 3. Test the SMTP configuration by sending a test email.
 
 
