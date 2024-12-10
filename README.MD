@@ -54,11 +54,11 @@ Once Jenkins is up and running, follow these steps to create a new pipeline job:
 2. Click on New Item
 3. Select Pipeline.
 4. Enter a job name.
-5. In the pipeline configuration, define the pipeline code in the **Pipeline** section.
+5. In the pipeline configuration, define the pipeline code in the Pipeline section.
 
 ## Step 7: Set Up Jenkins Credentials
 
-You need to store your AWS and Docker credentials in Jenkins using the **Credentials** feature:
+You need to store your AWS and Docker credentials in Jenkins using the Credentials feature:
 
 ### AWS Credentials
 - Store your AWS access keys to interact with AWS services like EKS.
@@ -70,8 +70,8 @@ You need to store your AWS and Docker credentials in Jenkins using the **Credent
 
 To receive email notifications about the success or failure of your pipeline, configure the Jenkins SMTP server:
 
-1. Go to **Manage Jenkins > Configure System**.
-2. In the **E-mail Notification** section, configure the SMTP server settings
+1. Go to Manage Jenkins > Configure System.
+2. In the E-mail Notification section, configure the SMTP server settings
 3. Test the SMTP configuration by sending a test email.
 
 
