@@ -1,7 +1,11 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const startTime = Date.now();
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 app.get('/status', (req, res) => {
   res.json({
