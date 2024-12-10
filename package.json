@@ -1,15 +1,28 @@
 {
-  "name": "backend",
+  "name": "backend-app",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "type": "module",
+     "scripts": {
+                 "test": "mocha './test/**/*.js' --timeout 5000"
+                   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeepDhiman03/backend-app.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeepDhiman03/backend-app/issues"
+  },
+  "homepage": "https://github.com/DeepDhiman03/backend-app#readme",
   "dependencies": {
     "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "chai": "^5.1.2",
+    "mocha": "^11.0.1",
+    "supertest": "^7.0.0"
   }
 }
