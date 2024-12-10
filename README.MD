@@ -77,7 +77,7 @@ To receive email notifications about the success or failure of your pipeline, co
 
 
 
-## Step 10: Explain the Pipeline Stages
+## Step 10: Pipeline Stages
 
 The pipeline consists of several stages, each performing a specific task to build, test, and deploy the Node.js application. Below is an explanation of each stage:
 
