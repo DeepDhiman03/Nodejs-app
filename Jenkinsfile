@@ -1,51 +1,92 @@
 pipeline {
     agent any
     environment {
-        S3_BUCKET = 'static-webapp-bucket'
+        DOCKER_REGISTRY = "deepdhiman" 
+        IMAGE_NAME = "nodejs-app"
+        IMAGE_TAG = "latest" 
     }
     stages {
-        stage('Clone Repositories') {
-            parallel {
-                stage('Clone Backend') {
-                    steps {
-                        dir('backend') {
-                            git branch: 'main', url: 'https://github.com/DeepDhiman03/backend.git'
-                        }
-                    }
-                }
-                stage('Clone Frontend') {
-                    steps {
-                        dir('frontend') {
-                            git branch: 'main', url: 'https://github.com/DeepDhiman03/frontend.git'
-                        }
-                    }
+        stage('Checkout') {
+            steps {
+                echo "Checking out the code..."
+                git branch: 'main', url: 'https://github.com/DeepDhiman03/backend.git'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    echo 'Installing dependencies...'
                 }
             }
         }
-        stage('Backend Deployment') {
+        
+        stage('Run Tests') {
             steps {
-                dir('backend') {
-                    sh 'docker build -t deepdhiman/backend:latest .'
+                script {
+                    echo 'Running tests...'
+                    
+                }
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    echo 'Building Docker image...'
+                    sh "docker build -t ${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG} ."
+                }
+            }
+        }
+        
+        stage('Push Image to DockerHub') {
+            steps {
+                script {
                     withCredentials([usernamePassword(credentialsId: 'dockerHubCred', 
                     passwordVariable: 'dockerHubPass', 
                     usernameVariable: 'dockerHubUser')]) {
-                    sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
-                    sh "docker push ${env.dockerHubUser}/backend:latest"
-                    sh "docker-compose down && docker-compose up -d"
+                        sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
+                        sh "docker push ${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG}"
                     }
-                    
-                    
                 }
             }
         }
-        stage('Frontend Deployment') {
+
+        stage('Deploy to Kubernetes') {
             steps {
-                dir('frontend') {
+                script {
                     withAWS(region: 'us-east-1', credentials: 'AWS_CREDENTIALS_ID') { 
-                    sh 'aws s3 sync . s3://${S3_BUCKET} --delete'
+                    sh 'aws eks --region us-east-1 update-kubeconfig --name Nodejsapp-cluster'
+                    sh 'kubectl apply -f nodejs-app-deployment.yaml'
+                    sh 'kubectl apply -f nodejs-app-service.yaml'
                     }
                 }
             }
+        }
+    }
+
+    post {
+        always {
+            echo "Cleaning up..."
+            sh "docker rmi ${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG} || true"
+        }
+        
+        
+        success {
+            echo "Deployment successful!"
+            emailext(
+                subject: "Deployment Successful: Build #${BUILD_NUMBER} - ${IMAGE_NAME}:${IMAGE_TAG}",
+                body: "The deployment of ${IMAGE_NAME}:${IMAGE_TAG} was successful.",
+                to: "dhimandeepesh03@gmail.com"
+            )
+        }
+        failure {
+            echo "Deployment failed!"
+            emailext(
+                subject: "Deployment Failed: Build #${BUILD_NUMBER} - ${IMAGE_NAME}:${IMAGE_TAG}",
+                body: "The deployment of ${IMAGE_NAME}:${IMAGE_TAG} failed.",
+                to: "dhimandeepesh03@gmail.com"
+            )
         }
     }
 }
