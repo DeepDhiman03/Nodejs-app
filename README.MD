@@ -102,13 +102,13 @@ The pipeline consists of several stages, each performing a specific task to buil
 5. **Push Image to DockerHub**  
    - **Description**: Pushes the Docker image to Docker Hub using stored credentials for the repository.
    - **Command**: 
-            ```sh
-               withCredentials([usernamePassword(credentialsId: 'dockerHubCred', 
-                    passwordVariable: 'dockerHubPass', 
-                    usernameVariable: 'dockerHubUser')]) {
-                     sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
-                     sh "docker push ${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG}"
-             ```
+       ```sh
+        withCredentials([usernamePassword(credentialsId: 'dockerHubCred', 
+        passwordVariable: 'dockerHubPass', 
+        usernameVariable: 'dockerHubUser')]) {
+        sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
+        sh "docker push ${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG}"
+       ```
 
 6. **Deploy to Kubernetes**  
    - **Description**: Deploys the application to an EKS (Elastic Kubernetes Service) cluster using kubectl and Kubernetes manifests.
