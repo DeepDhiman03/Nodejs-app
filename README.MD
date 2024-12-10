@@ -11,7 +11,6 @@ This project demonstrates the implementation of a CI/CD pipeline for a Node.js a
 
 ### Step 2: Create an EKS Cluster
 1. Use AWS EKS to create a Kubernetes cluster:
-   - Follow the AWS documentation to set up EKS 
    - Once the cluster is created, make sure it is properly configured with AWS CLI and kubectl.
 
 ### Step 3: Install Docker, kubectl, and AWS CLI on EC2
