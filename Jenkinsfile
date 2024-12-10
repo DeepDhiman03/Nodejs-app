@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo "Checking out the code..."
-                git branch: 'main', url: 'https://github.com/DeepDhiman03/backend.git'
+                git branch: 'main', url: 'https://github.com/DeepDhiman03/Nodejs-app.git'
             }
         }
 
