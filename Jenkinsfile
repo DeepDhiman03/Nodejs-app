@@ -5,7 +5,7 @@ pipeline {
         IMAGE_NAME = "nodejs-app"
         IMAGE_TAG = "latest" 
         REGION = "us-east-1"
-        CLUSTER_NAME = "Nodejs-app-cluster"
+        CLUSTER_NAME = "Nodejsapp-cluster"
     }
     stages {
         stage('Checkout') {
