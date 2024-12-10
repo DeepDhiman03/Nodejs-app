@@ -148,8 +148,13 @@ These are the steps that occur after the deployment is completed.
 Here are some screenshots of the project:
 
 1. **Screenshot 1**:  
+   ![Screenshot (1754)](https://github.com/user-attachments/assets/f500c8f8-fa15-486f-b8e7-33ea2bc40d87)  
+   _Description: A screenshot showing the application._
+
    ![Screenshot (1755)](https://github.com/user-attachments/assets/ea352738-a108-4601-b58f-d96314eba086)  
-   _Description: A screenshot showing the application ._
+   _Description: A screenshot showing the application api /status._
+
+
 
 2. **Screenshot 2**:  
    ![Screenshot (1752)](https://github.com/user-attachments/assets/34f01062-ecd2-4237-9b70-8a76423c06d1)  
