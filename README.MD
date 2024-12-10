@@ -90,7 +90,7 @@ The pipeline consists of several stages, each performing a specific task to buil
 
 1. **Checkout**  
    - **Description**: This stage checks out the latest code from the Git repository, specifically from the main branch.
-   - **Command**: `git checkout main`
+   - **Command**: `git branch: '<branch-name>', url: '<your-git-url>`
 
 2. **Install Dependencies**  
    - **Description**: Installs the required dependencies for the Node.js application using npm.
