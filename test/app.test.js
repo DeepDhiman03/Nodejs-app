@@ -1,6 +1,6 @@
 import request from 'supertest';
 import { assert } from 'chai';
-import app from '../app.js';  // Ensure the import path is correct
+import app { server } from '../app.js';  // Ensure the import path is correct
 
 describe('App Tests', () => {
 
@@ -18,9 +18,11 @@ describe('App Tests', () => {
           // Update the regex to allow more than one digit after the decimal point
            assert.match(response.body.uptime, /^\d+\.\d+s$/);
           });
+ 
   after(() => {
     if (server) {
       server.close();  // Close the server to stop the app
     }
   });
+  
 });
