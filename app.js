@@ -1,5 +1,5 @@
-import express from 'express';  // Replacing require with import
-import path from 'path';        // Replacing require with import
+import express from 'express';  
+import path from 'path';        
 
 const app = express();
 const startTime = Date.now();
@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 
 
 app.get('/', (req, res) => {
-          res.sendFile(path.join(__dirname, 'index.html'));  // Use __dirname here
+          res.sendFile(path.join(__dirname, 'index.html')); 
 });
 
 app.get('/status', (req, res) => {
@@ -24,4 +24,4 @@ const server = app.listen(80, () => {
   console.log('App running on port 80');
 });
 export { server }; 
-export default app;  // Exporting app as default
+export default app;  
