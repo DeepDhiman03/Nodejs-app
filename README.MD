@@ -164,7 +164,7 @@ These are the steps that occur after the deployment is completed.
 
 3. **Trigger the Pipeline**  
    - Save the Jenkins job configuration.  
-   - Manually trigger the build or set up webhooks for automatic triggers on code changes.
+   - set up webhooks for automatic triggers on code changes.
 
 
 ## Project Screenshots
