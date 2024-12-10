@@ -119,9 +119,11 @@ The pipeline consists of several stages, each performing a specific task to buil
    - **Description**: Deploys the application to an EKS (Elastic Kubernetes Service) cluster using kubectl and Kubernetes manifests.
    - **Command**:
        ```
-        aws eks --region ${REGION} update-kubeconfig --name ${CLUSTER_NAME}
-        kubectl apply -f nodejs-app-deployment.yaml
-        kubectl apply -f nodejs-app-service.yaml`
+         withAWS(region: 'us-east-1', credentials: 'AWS_CREDENTIALS_ID') { 
+            sh 'aws eks --region ${REGION} update-kubeconfig --name ${CLUSTER_NAME}'
+            sh 'kubectl apply -f nodejs-app-deployment.yaml'
+            sh 'kubectl apply -f nodejs-app-service.yaml'
+         }
       ```
 
 ## Post-deployment Steps
