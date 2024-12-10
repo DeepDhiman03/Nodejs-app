@@ -62,11 +62,9 @@ You need to store your AWS and Docker credentials in Jenkins using the **Credent
 
 ### AWS Credentials
 - Store your AWS access keys to interact with AWS services like EKS.
-- Navigate to **Jenkins Dashboard > Manage Jenkins > Manage Credentials** to add these credentials.
 
 ### Docker Credentials
 - Store Docker Hub credentials for pushing images to Docker Hub.
-- Similarly, use the **Credentials** feature in Jenkins to securely store Docker credentials.
 
 ## Step 8: Configure Jenkins SMTP for Email Notifications
 
