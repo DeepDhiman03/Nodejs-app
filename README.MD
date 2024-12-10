@@ -51,8 +51,8 @@ This project demonstrates the implementation of a CI/CD pipeline for a Node.js a
 Once Jenkins is up and running, follow these steps to create a new pipeline job:
 
 1. Go to the Jenkins UI.
-2. Click on **New Item**.
-3. Select **Pipeline**.
+2. Click on New Item
+3. Select Pipeline.
 4. Enter a job name.
 5. In the pipeline configuration, define the pipeline code in the **Pipeline** section.
 
