@@ -155,7 +155,6 @@ Here are some screenshots of the project:
    _Description: A screenshot showing the application api /status._
 
 
-
 2. **Screenshot 2**:  
    ![Screenshot (1752)](https://github.com/user-attachments/assets/34f01062-ecd2-4237-9b70-8a76423c06d1)  
    _Description: A screenshot showing the CI/CD pipeline execution in Jenkins._
@@ -163,6 +162,14 @@ Here are some screenshots of the project:
 3. **Screenshot 3**:  
    ![Screenshot (1750)](https://github.com/user-attachments/assets/3be730c8-9368-4a3f-a4c9-ed829683dc01)
    _Description: A screenshot of the application running on Kubernetes._
+
+4. **Screenshot 4**:  
+   ![Screenshot (1759)](https://github.com/user-attachments/assets/82ab13f7-7b32-4e41-9ca1-e559f21fcad0)
+   _Description: A screenshot of the notification  on pipeline success._
+
+5. **Screenshot 5**:  
+   ![Screenshot (1760)](https://github.com/user-attachments/assets/6795f264-8a19-4655-9e0d-2e823ad82ae7)
+   _Description: A screenshot of the notification  on pipeline failure._
 
 
 
