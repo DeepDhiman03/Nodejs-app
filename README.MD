@@ -22,21 +22,12 @@ This project demonstrates the implementation of a CI/CD pipeline for a Node.js a
 3. Install AWS CLI for AWS services interaction:
    - Follow the instructions [here](https://aws.amazon.com/cli/).
 
-### Step 4: Install Node.js and npm for the Project
-1. Install Node.js and npm (Node Package Manager) on the EC2 instance:
-   - Use the following command for installation:
-     ```sh
-     sudo apt update
-     sudo apt install nodejs npm -y
-     ```
-  
 
-### Step 5: Run Jenkins Server
+### Step 4: Run Jenkins Server
 1. Start the Jenkins server by running:
    ```sh
-   sudo systemctl start jenkin
+   sudo systemctl start jenkins
    ```
-
 2. Enable the Jenkins server
    ```sh
    sudo systemctl enable jenkins
@@ -44,6 +35,20 @@ This project demonstrates the implementation of a CI/CD pipeline for a Node.js a
 3. Access the Jenkins UI through the EC2 instance's public IP at http://<EC2_PUBLIC_IP>:8080
 
 
+### Step 5: Install Node.js and npm for the Project
+1. Install Node.js and npm (Node Package Manager) on the EC2 instance:
+   - Use the following command for installation:
+     ```sh
+     sudo apt update
+     sudo apt install nodejs npm -y
+     ```
+2. Adding current User to the Docker Group :
+   - Use the following commands:
+     ```sh
+     sudo usermod -aG docker $USER && newgrp docker
+     sudo usermod -aG docker jenkins
+     sudo systemctl restart jenkins
+     ```
 
 ## Step 6: Create a Jenkins Pipeline
 
