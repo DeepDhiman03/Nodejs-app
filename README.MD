@@ -141,11 +141,11 @@ These are the steps that occur after the deployment is completed.
 Here are some screenshots of the project:
 
 1. **Screenshot 1**:  
-   ![Screenshot 1](path/to/screenshot1.png)  
+   ![Screenshot (1755)](https://github.com/user-attachments/assets/ea352738-a108-4601-b58f-d96314eba086)  
    _Description: A screenshot showing the application ._
 
 2. **Screenshot 2**:  
-   ![Screenshot 2](path/to/screenshot2.png)  
+   ![Screenshot (1752)](https://github.com/user-attachments/assets/34f01062-ecd2-4237-9b70-8a76423c06d1)  
    _Description: A screenshot showing the CI/CD pipeline execution in Jenkins._
 
 3. **Screenshot 3**:  
