@@ -16,11 +16,8 @@ This project demonstrates the implementation of a CI/CD pipeline for a Node.js a
 
 ### Step 3: Install Docker, kubectl, and AWS CLI on EC2
 1. Install Docker:
-   - Follow the instructions [here](https://docs.docker.com/get-docker/).
 2. Install kubectl for Kubernetes cluster management:
-   - Follow the instructions [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
 3. Install AWS CLI for AWS services interaction:
-   - Follow the instructions [here](https://aws.amazon.com/cli/).
 
 
 ### Step 4: Run Jenkins Server
