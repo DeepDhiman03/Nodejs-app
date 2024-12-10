@@ -7,12 +7,11 @@ This project demonstrates the implementation of a CI/CD pipeline for a Node.js a
 ### Step 1: Launch an EC2 Instance and Install Jenkins
 1. Launch an EC2 instance on AWS.
 2. Install Jenkins on the EC2 instance:
-   - Follow the instructions [here](https://www.jenkins.io/doc/book/installing/).
    - Ensure that Jenkins is accessible via the public IP of your EC2 instance.
 
 ### Step 2: Create an EKS Cluster
 1. Use AWS EKS to create a Kubernetes cluster:
-   - Follow the AWS documentation to set up EKS [here](https://docs.aws.amazon.com/eks/latest/userguide/create-cluster.html).
+   - Follow the AWS documentation to set up EKS 
    - Once the cluster is created, make sure it is properly configured with AWS CLI and kubectl.
 
 ### Step 3: Install Docker, kubectl, and AWS CLI on EC2
@@ -28,13 +27,9 @@ This project demonstrates the implementation of a CI/CD pipeline for a Node.js a
    - Use the following command for installation:
      ```sh
      sudo apt update
-     sudo apt install nodejs npm
+     sudo apt install nodejs npm -y
      ```
-   - Verify the installation with:
-     ```sh
-     node -v
-     npm -v
-     ```
+  
 
 ### Step 5: Run Jenkins Server
 1. Start the Jenkins server by running:
