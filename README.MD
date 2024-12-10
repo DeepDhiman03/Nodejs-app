@@ -97,7 +97,7 @@ The pipeline consists of several stages, each performing a specific task to buil
 
 4. **Build Docker Image**  
    - **Description**: Builds a Docker image for the Node.js application, preparing it for deployment.
-   - **Command**: `docker build -t <image_name>:<tag> .`
+   - **Command**: `docker build -t ${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG} .`
 
 5. **Push Image to DockerHub**  
    - **Description**: Pushes the Docker image to Docker Hub using stored credentials for the repository.
