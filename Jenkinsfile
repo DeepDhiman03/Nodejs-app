@@ -4,6 +4,8 @@ pipeline {
         DOCKER_REGISTRY = "deepdhiman" 
         IMAGE_NAME = "nodejs-app"
         IMAGE_TAG = "latest" 
+        REGION = "us-east-1"
+        CLUSTER_NAME = "Nodejs-app-cluster"
     }
     stages {
         stage('Checkout') {
@@ -58,7 +60,7 @@ pipeline {
             steps {
                 script {
                     withAWS(region: 'us-east-1', credentials: 'AWS_CREDENTIALS_ID') { 
-                    sh 'aws eks --region us-east-1 update-kubeconfig --name Nodejsapp-cluster'
+                    sh 'aws eks --region ${REGION} update-kubeconfig --name ${CLUSTER_NAME}'
                     sh 'kubectl apply -f nodejs-app-deployment.yaml'
                     sh 'kubectl apply -f nodejs-app-service.yaml'
                     }
