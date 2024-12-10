@@ -148,7 +148,7 @@ These are the steps that occur after the deployment is completed.
    - **Recipient**: `dhimandeepesh03@gmail.com`
 
 
-## Step 10:  Using a Jenkinsfile to Access the Pipeline Script
+## Step 11:  Using a Jenkinsfile to Access the Pipeline Script
 
 ### Steps to Use a Jenkinsfile
 
