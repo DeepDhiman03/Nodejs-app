@@ -149,7 +149,7 @@ Here are some screenshots of the project:
    _Description: A screenshot showing the CI/CD pipeline execution in Jenkins._
 
 3. **Screenshot 3**:  
-   ![Screenshot 3](path/to/screenshot3.png)  
+   ![Screenshot (1750)](https://github.com/user-attachments/assets/3be730c8-9368-4a3f-a4c9-ed829683dc01)
    _Description: A screenshot of the application running on Kubernetes._
 
 
