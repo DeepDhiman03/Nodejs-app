@@ -18,5 +18,9 @@ describe('App Tests', () => {
           // Update the regex to allow more than one digit after the decimal point
            assert.match(response.body.uptime, /^\d+\.\d+s$/);
           });
-
+  after(() => {
+    if (server) {
+      server.close();  // Close the server to stop the app
+    }
+  });
 });
