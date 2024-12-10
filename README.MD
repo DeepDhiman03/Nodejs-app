@@ -176,7 +176,7 @@ Here are some screenshots of the project:
    _Description: A screenshot showing the application._
 
    ![Screenshot (1755)](https://github.com/user-attachments/assets/ea352738-a108-4601-b58f-d96314eba086)  
-   _Description: A screenshot showing the application api /status._
+   _Description: A screenshot showing the application uptime on api /status._
 
 
 2. **Screenshot 2**:  
