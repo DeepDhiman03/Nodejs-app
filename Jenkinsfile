@@ -76,21 +76,49 @@ pipeline {
         }
         
         
-        success {
-            echo "Deployment successful!"
-            emailext(
-                subject: "Deployment Successful: Build #${BUILD_NUMBER} - ${IMAGE_NAME}:${IMAGE_TAG}",
-                body: "The deployment of ${IMAGE_NAME}:${IMAGE_TAG} was successful.",
-                to: "dhimandeepesh03@gmail.com"
-            )
-        }
-        failure {
-            echo "Deployment failed!"
-            emailext(
-                subject: "Deployment Failed: Build #${BUILD_NUMBER} - ${IMAGE_NAME}:${IMAGE_TAG}",
-                body: "The deployment of ${IMAGE_NAME}:${IMAGE_TAG} failed.",
-                to: "dhimandeepesh03@gmail.com"
-            )
-        }
+       success {
+    echo "Deployment successful!"
+    emailext(
+        subject: "✅ Deployment Successful: Build #${BUILD_NUMBER} - ${IMAGE_NAME}:${IMAGE_TAG}",
+        body: """
+            <html>
+                <body>
+                    <h2 style="color: green;">✅ Deployment Successful</h2>
+                    <p>Build Number: <strong>${BUILD_NUMBER}</strong></p>
+                    <p>Image Name: <strong>${IMAGE_NAME}:${IMAGE_TAG}</strong></p>
+                    <hr>
+                    <p>The deployment of <strong>${IMAGE_NAME}:${IMAGE_TAG}</strong> was successful!</p>
+                    <footer style="margin-top: 20px;">
+                        <p style="font-size: 12px; color: gray;">This is an automated message from Jenkins.</p>
+                    </footer>
+                </body>
+            </html>
+        """,
+        mimeType: 'text/html',
+        to: "dhimandeepesh03@gmail.com"
+    )
+}
+       failure {
+    echo "Deployment failed!"
+    emailext(
+        subject: "❌ Deployment Failed: Build #${BUILD_NUMBER} - ${IMAGE_NAME}:${IMAGE_TAG}",
+        body: """
+            <html>
+                <body>
+                    <h2 style="color: red;">❌ Deployment Failed</h2>
+                    <p>Build Number: <strong>${BUILD_NUMBER}</strong></p>
+                    <p>Image Name: <strong>${IMAGE_NAME}:${IMAGE_TAG}</strong></p>
+                    <hr>
+                    <p>The deployment of <strong>${IMAGE_NAME}:${IMAGE_TAG}</strong> failed. Please check the logs for more details.</p>
+                    <footer style="margin-top: 20px;">
+                        <p style="font-size: 12px; color: gray;">This is an automated message from Jenkins.</p>
+                    </footer>
+                </body>
+            </html>
+        """,
+        mimeType: 'text/html',
+        to: "dhimandeepesh03@gmail.com"
+    )
+}
     }
 }
