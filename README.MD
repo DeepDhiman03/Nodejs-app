@@ -148,6 +148,23 @@ These are the steps that occur after the deployment is completed.
    - **Recipient**: `dhimandeepesh03@gmail.com`
 
 
+## Step 10:  Using a Jenkinsfile to Access the Pipeline Script
+
+### Steps to Use a Jenkinsfile
+
+1. **Create a Jenkinsfile**  
+   - Save the pipeline script in a file named `Jenkinsfile` at the root of your project repository.
+
+2. **Set the SCM**   
+   - In the **Pipeline** section, choose **Pipeline script from SCM**.  
+   - Set the SCM to your version control system (e.g., Git).  
+   - Provide the repository URL and specify the Jenkinsfile location.
+
+3. **Trigger the Pipeline**  
+   - Save the Jenkins job configuration.  
+   - Manually trigger the build or set up webhooks for automatic triggers on code changes.
+
+
 ## Project Screenshots
 
 Here are some screenshots of the project:
