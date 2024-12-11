@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo "Checking out the code..."
+                echo "Checking out the code"
                 git branch: 'main', url: 'https://github.com/DeepDhiman03/Nodejs-app.git'
             }
         }
@@ -18,7 +18,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    echo 'Installing dependencies...'
+                    echo 'Installing dependencies'
                     sh 'npm install'
                 }
             }
@@ -27,7 +27,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    echo 'Running tests...'
+                    echo 'Running tests'
                     sh 'npm test'
                     
                 }
